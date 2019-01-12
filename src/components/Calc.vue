@@ -30,6 +30,7 @@
         </tbody>
       </table>
       <p>計算結果</p>
+      <div v-if="type != ''">
       <table border="1">
         <thead>
           <tr>
@@ -53,6 +54,10 @@
           </tr>
         </tbody>
       </table>
+      </div>
+      <div  v-else-if="type === ''">
+        <p id="none_msg">符号が空白じゃない場合に表示されます</p>
+      </div>
     </div>
 </template>
 
@@ -72,6 +77,11 @@
 </script>
 
 <style scoped>
+  #none_msg{
+    text-align: center;
+    color: red;
+    font-weight: bold;
+  }
 table{
   text-align: center;
   display: inline-block;
